@@ -24,10 +24,27 @@ public class Main {
         String body = sc.nextLine();
         int id = articleLastId + 1;
         articleLastId++;
-        System.out.printf("%d번 게시물이 등록되었습니다.\n", id);
+
+        Article article = new Article();
+        article.id = id;
+        article.title = title;
+        article.body = body;
+
+        System.out.println("생성 된 게시물 객체 : " + article);
+
+        System.out.printf("%d번 게시물이 등록되었습니다.\n", article.id);
+      } else if (cmd.equals("add")) {
+
       }
     }
     System.out.println("== 프로그램 종료 ==");
     sc.close();
   }
+}
+
+class Article {
+  int id;
+  String title;
+  String body;
+
 }
